@@ -1,6 +1,7 @@
 import Banner from "@/components/Banner";
 import CategorySection from "@/components/CategorySection";
 import DealsSection from "@/components/DealsSection";
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Banner></Banner>
       <CategorySection></CategorySection>
       <DealsSection></DealsSection>
+      <Testimonials></Testimonials>
     </div>
   );
 }
