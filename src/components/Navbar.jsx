@@ -1,8 +1,11 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { use } from "react";
 import Logo from "./Logo";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const pathname = usePathname();
   const links = [
     { id: 1, title: "Headphones", link: "/category/headphones" },
     { id: 2, title: "Smart Watches", link: "/category/smartwatches" },
@@ -20,11 +23,18 @@ const Navbar = () => {
             <Link href="/products">SHOP</Link>
             {/* Mega menu */}
             <div className="absolute top-full left-0 w-[700px] bg-white shadow-xl hidden group-hover:block z-50">
-              <div className="p-5">
-                <h4 className="font-bold mb-2">Product Categories</h4>
+              <div className="p-12">
+                <h4 className="font-bold mb-4">Product Categories</h4>
                 <ul className="space-y-3 text-sm grid grid-cols-3 w-full">
                   {links.map((link) => (
-                    <li key={link.id}>
+                    <li
+                      key={link.id}
+                      className={`${
+                        pathname.includes(link.link)
+                          ? "text-red-600 font-semibold underline underline-offset-4 transition"
+                          : "hover:text-red-600 transition"
+                      }`}
+                    >
                       <Link href={`/products/${link.link}`}>{link.title}</Link>
                     </li>
                   ))}
