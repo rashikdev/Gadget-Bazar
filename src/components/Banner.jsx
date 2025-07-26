@@ -1,8 +1,8 @@
 import React from "react";
-
+import BannerSlider from "./BannerSlider";
 const Banner = () => {
   return (
-    <div className="bg-[url('/assets/banner.jpg')] bg-cover bg-center h-[65vh] flex items-center justify-around text-white">
+    <div className="bg-[url('/assets/banner.jpg')] bg-cover bg-center h-[65vh] flex flex-col-reverse md:flex-row items-center justify-around text-white">
       {/* Left side: Text */}
       <div className="max-w-lg">
         <h1 className="text-4xl font-bold mb-4 leading-tight">
@@ -12,18 +12,12 @@ const Banner = () => {
           Shop top tech gear, accessories, and devices with the best deals
           online.
         </p>
-        <button className="border px-6 py-2">
-          Shop Now
-        </button>
+        <button className="border px-6 py-2">Shop Now</button>
       </div>
 
       {/* Right side: Image */}
-      <div className="border">
-        <img
-          src="/assets/hero-gadget.png"
-          alt="Featured Gadget"
-          className="w-[300px] h-auto drop-shadow-xl"
-        />
+      <div className="w-1/3">
+        <BannerSlider></BannerSlider>
       </div>
     </div>
   );

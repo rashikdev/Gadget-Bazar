@@ -3,14 +3,16 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import Image from "next/image";
 import Link from "next/link";
 
 const DealsSlider = ({ deals }) => (
   <Swiper
-    modules={[Navigation]}
+    modules={[Autoplay, Navigation]}
     navigation
+    autoplay={{ delay: 3000, disableOnInteraction: false }}
+    loop={true}
     spaceBetween={20}
     slidesPerView={3}
     className="text-white"
