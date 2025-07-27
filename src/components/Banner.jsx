@@ -14,7 +14,7 @@ const Banner = () => {
           online.
         </p>
         <button>
-          <Link href="/products" className="bg-black border border-zinc-600 text-white px-6 py-3">Shop Now</Link>
+          <Link href="/products" className="bg-black text-white px-6 py-3 hover:bg-zinc-700">Shop Now</Link>
         </button>
       </div>
 
