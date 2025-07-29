@@ -94,7 +94,6 @@ const CategorySection = () => {
                 />
                 <div className="absolute top-6 left-6 w-full text-white">
                   <h2 className="text-2xl font-bold mb-2">{category?.name}</h2>
-                  <p className="text-lg font-semibold"></p>
                 </div>
               </div>
             </Link>

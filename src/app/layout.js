@@ -3,7 +3,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-
 const libertinus = Libertinus_Math({
   subsets: ["latin"],
   weight: ["400"],

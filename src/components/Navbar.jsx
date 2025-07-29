@@ -20,6 +20,9 @@ const Navbar = () => {
     { id: 2, title: "Contact", link: "/contact" },
     { id: 3, title: "FAQ", link: "/faq" },
   ];
+
+  const isLoggedIn = true;
+
   return (
     <div className="py-4 font-semibold sticky top-0 bg-white text-black z-50">
       <ul className="flex justify-between items-center w-11/12 mx-auto relative">
@@ -82,15 +85,27 @@ const Navbar = () => {
         <li>
           <Logo></Logo>
         </li>
-        <li
-          className={`${
-            pathname.includes("/my-cart")
-              ? "text-red-600 font-semibold underline underline-offset-4 transition"
-              : "hover:text-red-600 transition"
-          }`}
-        >
-          <Link href="/my-cart">MY CART</Link>
-        </li>
+        {isLoggedIn ? (
+          <li
+            className={`${
+              pathname.includes("/my-cart")
+                ? "text-red-600 font-semibold underline underline-offset-4 transition"
+                : "hover:text-red-600 transition"
+            }`}
+          >
+            <Link href="/my-cart">MY CART</Link>
+          </li>
+        ) : (
+          <li
+            className={`${
+              pathname.endsWith("/login")
+                ? "text-red-600 font-semibold underline underline-offset-4 transition"
+                : "hover:text-red-600 transition"
+            }`}
+          >
+            <Link href="/login">LOGIN</Link>
+          </li>
+        )}
       </ul>
     </div>
   );

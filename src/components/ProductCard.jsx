@@ -18,7 +18,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div onClick={handleNavigate}>
-      <div className="h-[450px] bg-zinc-800 text-white flex flex-col justify-between overflow-hidden group cursor-pointer">
+      <div className="h-[450px] bg-zinc-800 text-white flex flex-col justify-between overflow-hidden group cursor-pointer rounded-2xl">
         <div className="h-[200%] overflow-hidden">
           <Image
             src={image}
