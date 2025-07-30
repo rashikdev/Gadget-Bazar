@@ -2,6 +2,8 @@ import { Libertinus_Math } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Toaster } from "react-hot-toast";
+import NextAuthProvider from "@/Providers/NextAuthProvider";
 
 const libertinus = Libertinus_Math({
   subsets: ["latin"],
@@ -17,9 +19,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={libertinus.className}>
-        <Navbar />
-        {children}
-        <Footer />
+        <NextAuthProvider>
+          <Navbar />
+          {children}
+          <Footer />
+          <Toaster />
+        </NextAuthProvider>
       </body>
     </html>
   );

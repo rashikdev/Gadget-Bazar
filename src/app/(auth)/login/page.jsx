@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { FaEnvelope } from "react-icons/fa";
 import SocialLoginButtons from "../components/SocialLoginButton";
+import LoginForm from "@/components/LoginForm";
 
 const LoginPage = () => {
   return (
@@ -19,47 +19,12 @@ const LoginPage = () => {
             href="/register"
             className="px-4 py-1 rounded-md font-semibold text-sm bg-zinc-900 text-white"
           >
-            Sign Up
+            Register
           </Link>
         </div>
 
         {/* Form */}
-        <form className="space-y-4">
-          <div>
-            <label className="text-sm block mb-1">Email</label>
-            <input
-              type="email"
-              placeholder="hi@example.com"
-              className="w-full px-3 py-2 rounded-md bg-zinc-900 text-white border border-zinc-700 focus:outline-none focus:ring-1 focus:ring-purple-500"
-            />
-          </div>
-          <div>
-            <label className="text-sm block mb-1">Password</label>
-            <input
-              type="password"
-              placeholder="Enter your password"
-              className="w-full px-3 py-2 rounded-md bg-zinc-900 text-white border border-zinc-700 focus:outline-none focus:ring-1 focus:ring-purple-500"
-            />
-          </div>
-
-          <div className="flex justify-between items-center text-sm text-gray-400">
-            <label className="flex items-center space-x-1">
-              <input type="checkbox" className="accent-purple-500" />
-              <span>Remember me</span>
-            </label>
-            <Link href="/reset-password" className="hover:underline">
-              Forgot password?
-            </Link>
-          </div>
-
-          <button
-            type="submit"
-            className="w-full flex items-center justify-center gap-2 py-2 mt-2 bg-white text-black font-semibold rounded-full hover:opacity-90 transition"
-          >
-            <FaEnvelope />
-            Login
-          </button>
-        </form>
+        <LoginForm></LoginForm>
         <SocialLoginButtons></SocialLoginButtons>
       </div>
     </div>

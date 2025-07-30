@@ -3,8 +3,11 @@ import Link from "next/link";
 import React, { use } from "react";
 import Logo from "./Logo";
 import { usePathname } from "next/navigation";
+import useAuth from "@/hooks/useAuth";
 
 const Navbar = () => {
+  const { user } = useAuth();
+  console.log(user);
   const pathname = usePathname();
   const links = [
     { id: 1, title: "Headphones", link: "/category/headphones" },
@@ -20,8 +23,6 @@ const Navbar = () => {
     { id: 2, title: "Contact", link: "/contact" },
     { id: 3, title: "FAQ", link: "/faq" },
   ];
-
-  const isLoggedIn = true;
 
   return (
     <div className="py-4 font-semibold sticky top-0 bg-white text-black z-50">
@@ -85,7 +86,7 @@ const Navbar = () => {
         <li>
           <Logo></Logo>
         </li>
-        {isLoggedIn ? (
+        {user ? (
           <li
             className={`${
               pathname.includes("/my-cart")
