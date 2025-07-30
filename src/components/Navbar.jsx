@@ -7,7 +7,7 @@ import useAuth from "@/hooks/useAuth";
 
 const Navbar = () => {
   const { user } = useAuth();
-  console.log(user);
+  // console.log(user);
   const pathname = usePathname();
   const links = [
     { id: 1, title: "Headphones", link: "/category/headphones" },

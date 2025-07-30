@@ -1,20 +1,26 @@
 "use client";
-import React, { use, useState } from "react";
+import { GetSingleProduct } from "@/lib/GetProduct";
+import { AddProductInLocal } from "@/lib/utils";
+import Image from "next/image";
+import { use, useEffect, useState } from "react";
+import { FaStar } from "react-icons/fa";
 import { GoPlus } from "react-icons/go";
 import { TbMinus } from "react-icons/tb";
 
 const ProductDetailsPage = ({ params }) => {
   const { id } = use(params);
   const [quantity, setQuantity] = useState(1);
-  const [price, setPrice] = useState(200);
+  const [price, setPrice] = useState(0);
+  const [product, setProduct] = useState({});
+
   const handleIncrement = () => {
     setQuantity((prev) => prev + 1);
-    setPrice((prev) => prev + 200);
+    setPrice((prev) => prev + product?.price);
   };
   const handleDecrement = () => {
     if (quantity > 1) {
       setQuantity((prev) => prev - 1);
-      setPrice((prev) => prev - 200);
+      setPrice((prev) => prev - product?.price);
     }
   };
 
@@ -26,22 +32,72 @@ const ProductDetailsPage = ({ params }) => {
     }
   };
 
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const product = await GetSingleProduct(id);
+      setProduct(product);
+      setPrice(product?.price);
+    };
+    fetchProduct();
+  }, [id]);
+
+  const { name, features, brand, rating, price: productPrice } = product;
+
+  console.log(product);
+
+  const handleAddToCart = () => {
+    const cartItem = {
+      id: product._id,
+      name: product.name,
+      image: product.image,
+      price: product.price,
+      quantity,
+    };
+    AddProductInLocal(cartItem);
+    alert("Product added to cart");
+  };
+
   return (
     <div className="md:w-10/12 w-11/12 mx-auto mt-10 min-h-[calc(100vh-300px)]">
       <h2 className="text-3xl font-bold">Product ID: {id}</h2>
       <div className="md:h-[500px] h-auto flex md:flex-row flex-col justify-between gap-10">
-        <div className="border flex-1">
-          <div className="h-[300px]">Product Image</div>
+        <div className="flex-1 flex justify-center items-center">
+          <div className="w-[420px]">
+            {product?.image ? (
+              <Image
+                src={product.image}
+                alt={product.name || "Product image"}
+                width={500}
+                height={500}
+                priority
+              />
+            ) : (
+              <div className="w-[500px] h-[500px] bg-gray-100 flex items-center justify-center">
+                <p className="text-gray-500">Loading image...</p>
+              </div>
+            )}
+          </div>
         </div>
 
-        {/* product details and buy button */}
+        {/* Product Details */}
         <div className="flex justify-center items-center flex-1">
-          <div className="md:w-[70%] gap-8 md:gap-0 w-full h-full py-5 md:py-0 md:pt-10 px-4 flex flex-col justify-between">
-            <h2 className="text-2xl font-bold mb-4">Product Name</h2>
-            <p className="">Product Description</p>
-            <p>Brand</p>
-            <p>Rating</p>
-            <p>Product Price</p>
+          <div className="md:w-[70%] gap-8 md:gap-0 w-full h-full py-5 md:py-0 md:pt-10 px-4 flex flex-col justify-between font-bold">
+            <h2 className="text-[2rem] font-bold mb-4">{name}</h2>
+            <p className="">
+              {(features || []).map((feature) => (
+                <li key={feature} className="">
+                  {feature}
+                </li>
+              ))}
+            </p>
+            <p>Brand: {brand}</p>
+            <p className="flex items-center">
+              Rating: {rating}
+              <span className="text-[crimson] ml-1">
+                <FaStar></FaStar>
+              </span>
+            </p>
+            <p>Product Price: ${productPrice}</p>
             <div className="flex justify-between items-center">
               <div>
                 <label
@@ -79,7 +135,12 @@ const ProductDetailsPage = ({ params }) => {
               <button className="bg-black text-white py-2 w-1/2">
                 Buy Now
               </button>
-              <button className="bg-gray-200 py-2 px-4">Add to Cart</button>
+              <button
+                onClick={handleAddToCart}
+                className="bg-gray-200 py-2 px-4 cursor-pointer"
+              >
+                Add to Cart
+              </button>
             </div>
           </div>
         </div>

@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import CategoryBanner from "@/components/CategoryBanner";
 import ProductCard from "@/components/ProductCard";
+import { getAllProduct } from "@/lib/GetProduct";
+import axiosInstance from "@/lib/axiosInstance";
 
 export const generateMetadata = async ({ params }) => {
   const category = (await params).category;
@@ -153,8 +155,14 @@ const airbudsData = [
   },
 ];
 
+
 const CategoryPage = async ({ params }) => {
   const category = (await params).category;
+  console.log(category);
+  
+  const res = await axiosInstance.get(`/products?category=${category}`);
+  const products = res.data;
+
   return (
     <section className="min-h-[calc(100vh-2px] bg-zinc-950 text-white">
       <div className="">
@@ -165,8 +173,8 @@ const CategoryPage = async ({ params }) => {
           Products: {category}
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {airbudsData.map((product) => (
-            <ProductCard product={product} key={product.id}></ProductCard>
+          {products.map((product) => (
+            <ProductCard product={product} key={product._id}></ProductCard>
           ))}
         </div>
       </div>

@@ -13,19 +13,19 @@ const ProductCard = ({ product }) => {
     if (!isLoggedIn) {
       return alert("You need to login first");
     }
-    router.push(`/products/${product.id}`);
+    router.push(`/products/${product._id}`);
   };
 
   return (
     <div onClick={handleNavigate}>
       <div className="h-[450px] bg-zinc-800 text-white flex flex-col justify-between overflow-hidden group cursor-pointer rounded-2xl">
-        <div className="h-[200%] overflow-hidden">
+        <div className="h-[120vh] overflow-hidden">
           <Image
             src={image}
             alt={name}
             width={200}
-            height={200}
-            className="object-cover h-full w-full group-hover:scale-110 duration-500"
+            height={300}
+            className="object- h-full w-full group-hover:scale-110 duration-500 bg-white"
           />
         </div>
         <div className="h-full flex flex-col justify-end p-4 gap-4 translate-y-13 group-hover:translate-y-0 duration-500">

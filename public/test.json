@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Fire-Boltt Invincible Plus",
+    "brand": "Fire-Boltt",
+    "price": 119,
+    "features": ["BT Calling", "Storage for Songs", "AMOLED"],
+    "rating": 4.2,
+    "image": "https://i.ibb.co/YHJBXyz/image.png",
+    "category": "smartwatches"
+  },
+  {
+    "name": "boAt Wave Elevate",
+    "brand": "boAt",
+    "price": 59,
+    "features": ["Voice Assistant", "Sports Modes", "IP68 Rating"],
+    "rating": 4.0,
+    "image": "https://i.ibb.co/YFHrMV8X/Grey.png",
+    "category": "smartwatches"
+  },
+  {
+    "name": "Apple Watch Series 9",
+    "brand": "Apple",
+    "price": 429,
+    "features": ["Heart Rate", "ECG", "Always-On Display", "Fitness Tracking"],
+    "rating": 4.8,
+    "image": "https://i.ibb.co/YBrH1sdF/watch-8-Starlight-custom-mac-bd.webp",
+    "category": "smartwatches"
+  },
+  {
+    "name": "Samsung Galaxy Watch 6",
+    "brand": "Samsung",
+    "price": 299,
+    "features": ["Sleep Tracking", "Body Composition", "Bluetooth Calls"],
+    "rating": 4.6,
+    "image": "https://i.ibb.co/ZRHDr0FH/5-Utez-HJwn-Dvs-XAVSk-FJxb4.jpg",
+    "category": "smartwatches"
+  },
+  {
+    "name": "Fitbit Versa 4",
+    "brand": "Fitbit",
+    "price": 199,
+    "features": ["Stress Management", "Built-in GPS", "Water Resistant"],
+    "rating": 4.4,
+    "image": "https://i.ibb.co/ZRd6Q8gz/60802976.jpg",
+    "category": "smartwatches"
+  },
+  {
+    "name": "Garmin Venu 2",
+    "brand": "Garmin",
+    "price": 399,
+    "features": ["AMOLED Display", "Music Storage", "VO2 Max"],
+    "rating": 4.7,
+    "image": "https://i.ibb.co/RXmvbnB/b-B86v-Fj-PEZtm-Yi-Aeh9ge5-T.jpg",
+    "category": "smartwatches"
+  },
+  {
+    "name": "Amazfit GTR 4 Limited Edition",
+    "brand": "Amazfit",
+    "price": 179,
+    "features": ["Alexa Built-in", "Dual-Band GPS", "120+ Sports Modes"],
+    "rating": 4.3,
+    "image": "https://i.ibb.co/1YYxM5GC/132-2x.webp",
+    "category": "smartwatches"
+  },
+  {
+    "name": "Huawei Watch GT 3",
+    "brand": "Huawei",
+    "price": 249,
+    "features": ["SpO2 Monitor", "Skin Temperature", "Long Battery Life"],
+    "rating": 4.5,
+    "image": "https://i.ibb.co/wfSZLQS/image.png",
+    "category": "smartwatches"
+  },
+  {
+    "name": "OnePlus Watch 2",
+    "brand": "OnePlus",
+    "price": 229,
+    "features": ["Dual Engine Architecture", "VO2 Max", "Fast Charging"],
+    "rating": 4.2,
+    "image": "https://i.ibb.co/9kyP0T3n/images-pack-2193-5495.png",
+    "category": "smartwatches"
+  },
+  {
+    "name": "Realme Watch 3 Pro",
+    "brand": "Realme",
+    "price": 89,
+    "features": ["Bluetooth Calling", "GPS", "Large Display"],
+    "rating": 4.1,
+    "image": "https://i.ibb.co/9HTKqTdW/realme-watch-3-pro-45mm-amoled-display-bluetooth-11667991053.webp",
+    "category": "smartwatches"
+  },
+  {
+    "name": "Xiaomi Watch S1 Active",
+    "brand": "Xiaomi",
+    "price": 169,
+    "features": ["117 Sports Modes", "Blood Oxygen Monitor", "NFC"],
+    "rating": 4.3,
+    "image": "https://i.ibb.co/bRNrQ6fD/image.png",
+    "category": "smartwatches"
+  },
+  {
+    "name": "Noise ColorFit Pro 5",
+    "brand": "Noise",
+    "price": 69,
+    "features": ["1.85\" AMOLED", "Bluetooth Calling", "Health Suite"],
+    "rating": 4.0,
+    "image": "https://i.ibb.co/wNBMsLVP/noise-colorfit-pro-5-smart-watch-1-85-amoled-display.webp",
+    "category": "smartwatches"
+  }
+]
