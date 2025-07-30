@@ -2,12 +2,15 @@
 import { GetSingleProduct } from "@/lib/GetProduct";
 import { AddProductInLocal } from "@/lib/utils";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { use, useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { FaStar } from "react-icons/fa";
 import { GoPlus } from "react-icons/go";
 import { TbMinus } from "react-icons/tb";
 
 const ProductDetailsPage = ({ params }) => {
+  const router = useRouter();
   const { id } = use(params);
   const [quantity, setQuantity] = useState(1);
   const [price, setPrice] = useState(0);
@@ -51,10 +54,12 @@ const ProductDetailsPage = ({ params }) => {
       name: product.name,
       image: product.image,
       price: product.price,
+      features: product.features,
       quantity,
     };
     AddProductInLocal(cartItem);
-    alert("Product added to cart");
+    toast.success("Product added to cart");
+    router.push("/my-cart");
   };
 
   return (
