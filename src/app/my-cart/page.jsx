@@ -2,7 +2,7 @@
 import { GetProductInLocal, RemoveProductInLocal } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import React, { use, useEffect } from "react";
+import React, { useEffect } from "react";
 import toast from "react-hot-toast";
 
 const MyCartPage = () => {
@@ -13,8 +13,6 @@ const MyCartPage = () => {
     setCart(data);
   }, []);
 
-  console.log(cart);
-
   const handleRemove = (id) => {
     RemoveProductInLocal(id);
     const updatedCart = cart.filter((item) => item.id !== id);
@@ -23,44 +21,47 @@ const MyCartPage = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-350px)] w-11/12 mx-auto flex flex-col items-center justify-center font-semibold gap-5 my-8">
-      <h2 className="text-3xl">My Cart</h2>
+    <div className="min-h-[calc(100vh-350px)] w-11/12 max-w-4xl mx-auto flex flex-col items-center justify-center font-semibold gap-5 my-8">
+      <h2 className="text-2xl sm:text-3xl text-center">My Cart</h2>
+
       {cart.length > 0 ? (
-        <div className="w-[60%]">
+        <div className="w-full">
           <button className="uppercase w-full text-sm py-3 px-4 bg-black text-white mb-5">
             <Link href="/checkout">check out</Link>
           </button>
-          <div className=" grid grid-cols-1">
+
+          <div className="space-y-6">
             {cart.map((item) => (
               <div
                 key={item.id}
-                className="flex justify-between gap-10 *:p-3 shadow-md"
+                className="flex flex-col md:flex-row justify-between gap-4 p-4 rounded-md shadow-md"
               >
-                <div className="flex justify-center flex-1">
+                <div className="flex justify-center md:flex-1">
                   <Image
                     src={item.image}
                     alt={item.name}
                     width={200}
                     height={200}
+                    className="object-contain max-h-[200px]"
                   />
                 </div>
-                <div className="flex-1 space-y-4">
-                  <h3 className="text-2xl">{item.name}</h3>
-                  <p className="text-xl">Features</p>
-                  <div>
+
+                <div className="flex-1 space-y-3">
+                  <h3 className="text-lg sm:text-xl">{item.name}</h3>
+                  <p className="text-base font-medium">Features:</p>
+                  <ul className="list-disc list-inside text-sm">
                     {item.features.map((feature) => (
-                      <p key={feature} className="text-sm">
-                        {feature}
-                      </p>
+                      <li key={feature}>{feature}</li>
                     ))}
-                  </div>
+                  </ul>
                   <p className="text-sm">Quantity: {item.quantity}</p>
                 </div>
-                <div className="flex flex-col justify-between items-center">
-                  <p className="text-2xl">${item.price}</p>
+
+                <div className="flex flex-row md:flex-col items-center justify-between md:justify-between gap-2 md:gap-10 mt-4 md:mt-0">
+                  <p className="text-lg font-bold">${item.price}</p>
                   <button
                     onClick={() => handleRemove(item.id)}
-                    className="uppercase text-sm py-1 px-6 bg-black text-white cursor-pointer"
+                    className="uppercase text-sm py-1 px-4 cursor-pointer bg-black text-white"
                   >
                     Remove
                   </button>
@@ -68,18 +69,22 @@ const MyCartPage = () => {
               </div>
             ))}
           </div>
-          <div className="flex justify-between py-5 text-2xl px-2">
-            <p>Total Price: </p>
+
+          <div className="flex justify-between items-center py-5 text-lg md:text-2xl px-2 mt-5 border-t">
+            <p>Total Price:</p>
             <p>${cart.reduce((acc, item) => acc + item.price, 0)}</p>
           </div>
         </div>
       ) : (
-        <>
-          <p>Your Cart Is Empty</p>
-          <button className="uppercase text-sm py-2 px-4 bg-black text-white">
-            <Link href="/products">back to shop</Link>
-          </button>
-        </>
+        <div className="text-center space-y-3">
+          <p className="text-lg sm:text-xl">Your Cart Is Empty</p>
+          <Link
+            href="/products"
+            className="inline-block uppercase text-sm py-2 px-4 bg-black text-white"
+          >
+            back to shop
+          </Link>
+        </div>
       )}
     </div>
   );
