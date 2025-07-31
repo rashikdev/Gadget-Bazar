@@ -1,4 +1,3 @@
-// components/DealsSlider.jsx
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -14,13 +13,23 @@ const DealsSlider = ({ deals }) => (
     autoplay={{ delay: 3000, disableOnInteraction: false }}
     loop={true}
     spaceBetween={20}
-    slidesPerView={3}
+    breakpoints={{
+      320: {
+        slidesPerView: 1,
+      },
+      640: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    }}
     className="text-white"
   >
     {deals.map((deal) => (
       <SwiperSlide key={deal.id}>
         <div className="bg-zinc-900 p-4 rounded shadow group">
-          <div className="relative h-82 w-full overflow-hidden">
+          <div className="relative h-64 md:h-80 w-full overflow-hidden">
             <Image
               src={deal.image}
               alt={deal.title}

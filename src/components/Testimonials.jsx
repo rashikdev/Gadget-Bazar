@@ -35,7 +35,7 @@ const Testimonials = () => {
 
   return (
     <section className="bg-zinc-950 text-white flex items-center justify-center py-16">
-      <div className="w-11/12 max-w-screen-xl mx-auto ">
+      <div className="md:w-11/12 w-full max-w-screen-xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-10">
           What Our Customers Say
         </h2>
@@ -55,7 +55,7 @@ const Testimonials = () => {
               ))}
             </Marquee>
           </div>
-          <div>
+          <div className="hidden md:block">
             <Marquee speed={50} pauseOnHover direction="right">
               {reviews.map((review) => (
                 <div

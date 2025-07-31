@@ -1,12 +1,16 @@
 import { FaFacebookF, FaTwitter, FaInstagram, FaGithub } from "react-icons/fa";
+import Logo from "./Logo";
+import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-zinc-950 text-gray-300 py-12">
+    <footer className="bg-zinc-950 text-gray-300 py-12 px-4 md:px-0">
       <div className="w-11/12 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Brand Section */}
         <div>
-          <h2 className="text-2xl font-bold text-white mb-4">Gadget Bazar</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">
+            <Logo />
+          </h2>
           <p className="text-sm text-gray-400">
             Your one-stop shop for the latest and greatest tech gadgets in
             Bangladesh. Fast delivery, genuine products, and amazing deals.
@@ -33,24 +37,24 @@ const Footer = () => {
           <h3 className="text-xl font-semibold text-white mb-4">Quick Links</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="/" className="hover:text-white transition">
+              <Link href="/" className="hover:text-white transition">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/shop" className="hover:text-white transition">
+              <Link href="/products" className="hover:text-white transition">
                 Shop
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/about" className="hover:text-white transition">
+              <Link href="/about" className="hover:text-white transition">
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:text-white transition">
+              <Link href="/contact" className="hover:text-white transition">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

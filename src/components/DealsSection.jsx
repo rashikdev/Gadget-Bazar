@@ -56,7 +56,7 @@ const deals = [
 
 const DealsSection = () => {
   return (
-    <section className="bg-black text-white h-[calc(100vh-68px)] flex items-center">
+    <section className="bg-black text-white py-16 flex items-center">
       <div className="w-10/12 mx-auto flex flex-col gap-10">
         <div>
           <h2 className="text-3xl font-bold mb-2">🔥 Hot Deals & Offers</h2>
