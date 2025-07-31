@@ -4,10 +4,11 @@ import React, { use } from "react";
 import Logo from "./Logo";
 import { usePathname } from "next/navigation";
 import useAuth from "@/hooks/useAuth";
+import Menu from "./Menu";
 
 const Navbar = () => {
   const { user } = useAuth();
-  // console.log(user);
+
   const pathname = usePathname();
   const links = [
     { id: 1, title: "Headphones", link: "/category/headphones" },
@@ -26,7 +27,7 @@ const Navbar = () => {
 
   return (
     <div className="py-4 font-semibold sticky top-0 bg-white text-black z-50">
-      <ul className="flex justify-between items-center w-11/12 mx-auto relative">
+      <ul className="justify-between items-center w-11/12 mx-auto relative hidden md:flex">
         <div className="flex items-center gap-5">
           <li className="group cursor-default">
             SHOP
@@ -108,6 +109,16 @@ const Navbar = () => {
           </li>
         )}
       </ul>
+      <div className="md:hidden px-2">
+        <ul className="flex justify-between items-center">
+          <li>
+            <Logo></Logo>
+          </li>
+          <li>
+            <Menu></Menu>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
