@@ -78,7 +78,7 @@ const ProductDetailsPage = ({ params }) => {
               />
             ) : (
               <div className="w-[500px] h-[500px] bg-gray-100 flex items-center justify-center">
-                <p className="text-gray-500">Loading image...</p>
+                <p className="text-gray-800 animate-pulse">Loading image...</p>
               </div>
             )}
           </div>

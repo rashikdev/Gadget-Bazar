@@ -1,110 +1,114 @@
 [
   {
-    "name": "Fire-Boltt Invincible Plus",
-    "brand": "Fire-Boltt",
-    "price": 119,
-    "features": ["BT Calling", "Storage for Songs", "AMOLED"],
-    "rating": 4.2,
-    "image": "https://i.ibb.co/YHJBXyz/image.png",
-    "category": "smartwatches"
-  },
-  {
-    "name": "boAt Wave Elevate",
-    "brand": "boAt",
-    "price": 59,
-    "features": ["Voice Assistant", "Sports Modes", "IP68 Rating"],
-    "rating": 4.0,
-    "image": "https://i.ibb.co/YFHrMV8X/Grey.png",
-    "category": "smartwatches"
-  },
-  {
-    "name": "Apple Watch Series 9",
-    "brand": "Apple",
-    "price": 429,
-    "features": ["Heart Rate", "ECG", "Always-On Display", "Fitness Tracking"],
-    "rating": 4.8,
-    "image": "https://i.ibb.co/YBrH1sdF/watch-8-Starlight-custom-mac-bd.webp",
-    "category": "smartwatches"
-  },
-  {
-    "name": "Samsung Galaxy Watch 6",
-    "brand": "Samsung",
-    "price": 299,
-    "features": ["Sleep Tracking", "Body Composition", "Bluetooth Calls"],
+    "name": "Nothing Ear (2)",
+    "brand": "Nothing",
+    "price": 149,
+    "features": ["Transparent Design", "Hi-Res Audio", "Personalized ANC"],
     "rating": 4.6,
-    "image": "https://i.ibb.co/ZRHDr0FH/5-Utez-HJwn-Dvs-XAVSk-FJxb4.jpg",
-    "category": "smartwatches"
+    "image": "https://i.ibb.co/Mxprjct4/04b-CV9s39hqk-Fdl-E0l-W7-Q4-W-3.jpg",
+    "category": "earbuds"
   },
   {
-    "name": "Fitbit Versa 4",
-    "brand": "Fitbit",
-    "price": 199,
-    "features": ["Stress Management", "Built-in GPS", "Water Resistant"],
-    "rating": 4.4,
-    "image": "https://i.ibb.co/ZRd6Q8gz/60802976.jpg",
-    "category": "smartwatches"
-  },
-  {
-    "name": "Garmin Venu 2",
-    "brand": "Garmin",
-    "price": 399,
-    "features": ["AMOLED Display", "Music Storage", "VO2 Max"],
-    "rating": 4.7,
-    "image": "https://i.ibb.co/RXmvbnB/b-B86v-Fj-PEZtm-Yi-Aeh9ge5-T.jpg",
-    "category": "smartwatches"
-  },
-  {
-    "name": "Amazfit GTR 4 Limited Edition",
-    "brand": "Amazfit",
-    "price": 179,
-    "features": ["Alexa Built-in", "Dual-Band GPS", "120+ Sports Modes"],
-    "rating": 4.3,
-    "image": "https://i.ibb.co/1YYxM5GC/132-2x.webp",
-    "category": "smartwatches"
-  },
-  {
-    "name": "Huawei Watch GT 3",
-    "brand": "Huawei",
+    "name": "Apple AirPods Pro (2nd Gen)",
+    "brand": "Apple",
     "price": 249,
-    "features": ["SpO2 Monitor", "Skin Temperature", "Long Battery Life"],
-    "rating": 4.5,
-    "image": "https://i.ibb.co/wfSZLQS/image.png",
-    "category": "smartwatches"
+    "features": ["ANC", "Spatial Audio", "MagSafe Charging Case"],
+    "rating": 4.8,
+    "image": "https://i.ibb.co/Dg1dNxVy/F213.webp",
+    "category": "earbuds"
   },
   {
-    "name": "OnePlus Watch 2",
-    "brand": "OnePlus",
+    "name": "Samsung Galaxy Buds2 Pro",
+    "brand": "Samsung",
     "price": 229,
-    "features": ["Dual Engine Architecture", "VO2 Max", "Fast Charging"],
-    "rating": 4.2,
-    "image": "https://i.ibb.co/9kyP0T3n/images-pack-2193-5495.png",
-    "category": "smartwatches"
+    "features": ["24-bit Hi-Fi Audio", "ANC", "360 Audio"],
+    "rating": 4.7,
+    "image": "https://i.ibb.co/8D6GhT8M/ph-11134207-7r98o-lmqabzjumigh8f.jpg",
+    "category": "earbuds"
   },
   {
-    "name": "Realme Watch 3 Pro",
+    "name": "Sony WF-1000XM5",
+    "brand": "Sony",
+    "price": 299,
+    "features": [
+      "Best-in-Class ANC",
+      "High-Res Audio",
+      "8.4g Lightweight Design"
+    ],
+    "rating": 4.9,
+    "image": "https://i.ibb.co/39YbjdH6/190806-sony-wf-1000xm3-headphones-tws-review-specs-3-1.jpg",
+    "category": "earbuds"
+  },
+  {
+    "name": "Jabra Elite 7 Pro",
+    "brand": "Jabra",
+    "price": 199,
+    "features": ["Adjustable ANC", "MultiSensor Voice", "IP57 Waterproof"],
+    "rating": 4.5,
+    "image": "https://i.ibb.co/CsDT4QV1/jabra-elite-8-active-navy-3-22057.webp",
+    "category": "earbuds"
+  },
+  {
+    "name": "Beats Fit Pro",
+    "brand": "Beats",
+    "price": 199,
+    "features": ["Secure Fit Wing Tips", "ANC", "Spatial Audio"],
+    "rating": 4.6,
+    "image": "https://i.ibb.co/27kmjXtS/N211285-3.jpg",
+    "category": "earbuds"
+  },
+  {
+    "name": "Google Pixel Buds Pro",
+    "brand": "Google",
+    "price": 199,
+    "features": ["Custom 6-core Audio Chip", "ANC", "Multipoint Connectivity"],
+    "rating": 4.4,
+    "image": "https://i.ibb.co/3mRv7YqX/6d708e54-c636-4689-bcba-1fe156fff6a2.jpg",
+    "category": "earbuds"
+  },
+  {
+    "name": "Sennheiser Momentum True Wireless 3",
+    "brand": "Sennheiser",
+    "price": 279,
+    "features": ["Audiophile Sound", "Adaptive ANC", "Qi Wireless Charging"],
+    "rating": 4.7,
+    "image": "https://i.ibb.co/ts7dV4T/sennheiser-momentum3.png",
+    "category": "earbuds"
+  },
+  {
+    "name": "Anker Soundcore Liberty 4",
+    "brand": "Anker",
+    "price": 129,
+    "features": ["Spatial Audio", "Heart Rate Monitor", "ANC"],
+    "rating": 4.5,
+    "image": "https://i.ibb.co/psWMr2M/soundcore-liberty-4-nc-navy-blue-500x500.webp",
+    "category": "earbuds"
+  },
+  {
+    "name": "OnePlus Buds Pro 2",
+    "brand": "OnePlus",
+    "price": 179,
+    "features": ["Co-Created with Dynaudio", "ANC", "LHDC Audio"],
+    "rating": 4.4,
+    "image": "https://i.ibb.co/ksGXwgVJ/One-Plus-Buds-Pro-2-True-Wireless-Earbuds.jpg",
+    "category": "earbuds"
+  },
+  {
+    "name": "Realme Buds Air 5 Pro",
     "brand": "Realme",
-    "price": 89,
-    "features": ["Bluetooth Calling", "GPS", "Large Display"],
-    "rating": 4.1,
-    "image": "https://i.ibb.co/9HTKqTdW/realme-watch-3-pro-45mm-amoled-display-bluetooth-11667991053.webp",
-    "category": "smartwatches"
-  },
-  {
-    "name": "Xiaomi Watch S1 Active",
-    "brand": "Xiaomi",
-    "price": 169,
-    "features": ["117 Sports Modes", "Blood Oxygen Monitor", "NFC"],
+    "price": 99,
+    "features": ["Dual Drivers", "ANC", "LDAC Codec"],
     "rating": 4.3,
-    "image": "https://i.ibb.co/bRNrQ6fD/image.png",
-    "category": "smartwatches"
+    "image": "https://i.ibb.co/qL8GGs5N/realmebudsair5proteaser35.jpg",
+    "category": "earbuds"
   },
   {
-    "name": "Noise ColorFit Pro 5",
-    "brand": "Noise",
-    "price": 69,
-    "features": ["1.85\" AMOLED", "Bluetooth Calling", "Health Suite"],
-    "rating": 4.0,
-    "image": "https://i.ibb.co/wNBMsLVP/noise-colorfit-pro-5-smart-watch-1-85-amoled-display.webp",
-    "category": "smartwatches"
+    "name": "SoundPEATS Capsule3 Pro",
+    "brand": "SoundPEATS",
+    "price": 79,
+    "features": ["Hi-Res Wireless", "43dB ANC", "Multipoint Bluetooth"],
+    "rating": 4.2,
+    "image": "https://i.ibb.co/zW8Jm7PN/Sound-PEATS-Capsule-3-Pro-Transparent-Special-Edition-2.jpg",
+    "category": "earbuds"
   }
 ]
