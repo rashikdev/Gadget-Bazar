@@ -61,7 +61,7 @@ const CategorySection = () => {
       <h2 className="text-4xl font-bold mb-6">
         EXPLORE OUR TOP <br /> PRODUCTS BY CATEGORY
       </h2>
-      <div className="flex gap-5">
+      <div className="flex gap-5 md:flex-row flex-col">
         <Link href={firstCategory?.link}>
           <div className="flex-1 relative w-full overflow-hidden">
             <Image
@@ -70,17 +70,16 @@ const CategorySection = () => {
               alt={firstCategory?.name}
               width={200}
               height={420}
-              className="w-full h-[420px] object-cover hover:scale-110 transition duration-300"
+              className="w-full md:h-[420px] h-[200px] object-cover hover:scale-110 transition duration-300"
             />
-            <div className="absolute top-6 left-6 w-full text-white">
-              <h2 className="text-2xl font-bold mb-2">{firstCategory?.name}</h2>
-              <p className="text-lg font-semibold"></p>
+            <div className="absolute md:top-6 md:left-6 w-full text-white">
+              <h2 className="text-2xl font-bold">{firstCategory?.name}</h2>
             </div>
           </div>
         </Link>
 
         {/* Grid of items */}
-        <div className="grid grid-cols-3 flex-3 gap-5">
+        <div className="grid md:grid-cols-3 grid-cols-2 flex-3 gap-5">
           {rest.map((category) => (
             <Link key={category.id} href={category?.link}>
               <div className=" h-[200px] relative overflow-hidden">

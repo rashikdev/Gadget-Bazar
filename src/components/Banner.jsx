@@ -3,7 +3,7 @@ import BannerSlider from "./BannerSlider";
 import Link from "next/link";
 const Banner = () => {
   return (
-    <div className="bg-[url('/assets/banner.jpg')] bg-cover bg-center h-[65vh] flex flex-col-reverse md:flex-row items-center justify-around text-white">
+    <div className="bg-[url('/assets/banner.jpg')] bg-cover bg-center md:h-[65vh] h-auto p-5 flex flex-col md:flex-row items-center justify-around text-white">
       {/* Left side: Text */}
       <div className="max-w-lg">
         <h1 className="text-4xl font-bold mb-4 leading-tight">
@@ -19,7 +19,7 @@ const Banner = () => {
       </div>
 
       {/* Right side: Image */}
-      <div className="w-1/3">
+      <div className="md:w-1/3 w-full flex justify-end">
         <BannerSlider></BannerSlider>
       </div>
     </div>

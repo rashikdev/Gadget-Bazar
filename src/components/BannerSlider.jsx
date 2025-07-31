@@ -15,7 +15,7 @@ const bannerImages = [headphone, SmartWatch, wirelesscharger];
 
 const BannerSlider = () => {
   return (
-    <div className="w-full">
+    <div className="md:w-full w-2/4 h-[34vh] rounded-full">
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
