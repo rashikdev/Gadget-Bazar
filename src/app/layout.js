@@ -13,6 +13,7 @@ const libertinus = Libertinus_Math({
 export const metadata = {
   title: "Gadget Bazar",
   description: "Discover the Latest Gadgets at Gadget Bazar",
+  icon: "/favicon.png",
 };
 
 export default function RootLayout({ children }) {

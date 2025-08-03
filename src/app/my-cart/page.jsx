@@ -26,9 +26,11 @@ const MyCartPage = () => {
 
       {cart.length > 0 ? (
         <div className="w-full">
-          <button className="uppercase w-full text-sm py-3 px-4 bg-black text-white mb-5">
-            <Link href="/checkout">check out</Link>
-          </button>
+          <Link href="/my-cart/checkout">
+            <button className="uppercase w-full text-sm py-3 px-4 bg-black text-white mb-5 cursor-pointer">
+              Check Out
+            </button>
+          </Link>
 
           <div className="space-y-6">
             {cart.map((item) => (
