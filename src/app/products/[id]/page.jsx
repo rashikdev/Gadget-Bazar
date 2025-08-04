@@ -21,7 +21,7 @@ const ProductDetailsPage = async ({ params }) => {
   const res = await axiosInstance.get(`/products/${id}`);
   const product = res.data;
 
-  const { name, price, features, rating, image, brand, category } = product;
+  const { name, price, features, rating, image, brand } = product;
 
   return (
     <div className="md:w-10/12 w-11/12 mx-auto mt-10 min-h-[calc(100vh-300px)]">
