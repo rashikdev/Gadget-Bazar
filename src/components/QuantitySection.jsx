@@ -5,7 +5,7 @@ import { TbMinus } from "react-icons/tb";
 import { useRouter } from "next/navigation";
 import { AddProductInLocal } from "@/lib/utils";
 import toast from "react-hot-toast";
-
+import { motion } from "motion/react";
 const QuantitySection = ({ product }) => {
   const router = useRouter();
   const [quantity, setQuantity] = useState(1);
@@ -54,12 +54,17 @@ const QuantitySection = ({ product }) => {
             Quantity
           </label>
           <div className="w-[190px] p-3 flex justify-between border">
-            <button onClick={handleDecrement} className="cursor-pointer">
+            <motion.button
+              whileTap={{ scale: 0.7, opacity: 0.5 }}
+              transition={{ duration: 0.1 }}
+              onClick={handleDecrement}
+              className="cursor-pointer"
+            >
               <TbMinus
                 size={24}
-                className="rounded-full hover:bg-zinc-300 transition duration-300"
+                className="rounded-full hover:bg-zinc-300 transition duration-300 hover:text-[#28cb3b]"
               />
-            </button>
+            </motion.button>
             <input
               type="number"
               id="quantity"
@@ -68,12 +73,17 @@ const QuantitySection = ({ product }) => {
               min={1}
               className="w-12 outline-none text-center text-xl font-bold text-[crimson] no-spinner"
             />
-            <button onClick={handleIncrement} className="cursor-pointer">
+            <motion.button
+              whileTap={{ scale: 0.7, opacity: 0.5 }}
+              transition={{ duration: 0.1 }}
+              onClick={handleIncrement}
+              className="cursor-pointer"
+            >
               <GoPlus
                 size={24}
-                className="rounded-full hover:bg-zinc-300 transition duration-300"
+                className="rounded-full hover:bg-zinc-300 transition duration-300 hover:text-[#28cb3b]"
               />
-            </button>
+            </motion.button>
           </div>
         </div>
 
@@ -84,15 +94,19 @@ const QuantitySection = ({ product }) => {
       </div>
 
       <div className="flex justify-between">
-        <button className="bg-black text-white py-2 w-1/2 hover:opacity-90 transition">
+        <motion.button
+          whileTap={{ scale: 0.9 }}
+          className="bg-black text-white py-2 w-1/2 hover:opacity-50 cursor-pointer"
+        >
           Buy Now
-        </button>
-        <button
+        </motion.button>
+        <motion.button
+          whileTap={{ scale: 0.9 }}
           onClick={handleAddToCart}
-          className="bg-gray-200 text-black py-2 px-4 hover:bg-gray-300 transition cursor-pointer"
+          className="bg-gray-200 text-black py-2 px-4 hover:bg-gray-300 cursor-pointer"
         >
           Add to Cart
-        </button>
+        </motion.button>
       </div>
     </>
   );

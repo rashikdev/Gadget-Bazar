@@ -1,4 +1,5 @@
 "use client";
+import useAuth from "@/hooks/useAuth";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -7,10 +8,10 @@ const ProductCard = ({ product }) => {
   const router = useRouter();
   const { image, name, price } = product;
   // console.log(product);
-  const isLoggedIn = true;
+  const { user } = useAuth();
 
   const handleNavigate = () => {
-    if (!isLoggedIn) {
+    if (!user) {
       return alert("You need to login first");
     }
     router.push(`/products/${product._id}`);
@@ -32,7 +33,7 @@ const ProductCard = ({ product }) => {
           <h3 className="text-xl">{name}</h3>
           <p>Price ${price}</p>
           <button className="bg-black text-white py-1 px-6 w-fit uppercase">
-            {isLoggedIn ? "click for details" : "Sign In to Buy"}
+            {user ? "click for details" : "Sign In to Buy"}
           </button>
         </div>
       </div>

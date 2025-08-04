@@ -5,6 +5,16 @@ import Image from "next/image";
 
 import { FaStar } from "react-icons/fa";
 
+export const generateMetadata = async ({ params }) => {
+  const { id } = await params;
+  const res = await axiosInstance.get(`/products/${id}`);
+  const product = res.data;
+  return {
+    title: `Gadget Bazar | ${product.name}`,
+    description: `Product details for ${product.name}`,
+  };
+};
+
 const ProductDetailsPage = async ({ params }) => {
   const { id } = await params;
 

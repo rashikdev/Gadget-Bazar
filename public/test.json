@@ -1,114 +1,110 @@
 [
   {
-    "name": "Nothing Ear (2)",
-    "brand": "Nothing",
-    "price": 149,
-    "features": ["Transparent Design", "Hi-Res Audio", "Personalized ANC"],
-    "rating": 4.6,
-    "image": "https://i.ibb.co/Mxprjct4/04b-CV9s39hqk-Fdl-E0l-W7-Q4-W-3.jpg",
-    "category": "earbuds"
-  },
-  {
-    "name": "Apple AirPods Pro (2nd Gen)",
-    "brand": "Apple",
-    "price": 249,
-    "features": ["ANC", "Spatial Audio", "MagSafe Charging Case"],
-    "rating": 4.8,
-    "image": "https://i.ibb.co/Dg1dNxVy/F213.webp",
-    "category": "earbuds"
-  },
-  {
-    "name": "Samsung Galaxy Buds2 Pro",
-    "brand": "Samsung",
-    "price": 229,
-    "features": ["24-bit Hi-Fi Audio", "ANC", "360 Audio"],
-    "rating": 4.7,
-    "image": "https://i.ibb.co/8D6GhT8M/ph-11134207-7r98o-lmqabzjumigh8f.jpg",
-    "category": "earbuds"
-  },
-  {
-    "name": "Sony WF-1000XM5",
-    "brand": "Sony",
-    "price": 299,
-    "features": [
-      "Best-in-Class ANC",
-      "High-Res Audio",
-      "8.4g Lightweight Design"
-    ],
-    "rating": 4.9,
-    "image": "https://i.ibb.co/39YbjdH6/190806-sony-wf-1000xm3-headphones-tws-review-specs-3-1.jpg",
-    "category": "earbuds"
-  },
-  {
-    "name": "Jabra Elite 7 Pro",
-    "brand": "Jabra",
-    "price": 199,
-    "features": ["Adjustable ANC", "MultiSensor Voice", "IP57 Waterproof"],
-    "rating": 4.5,
-    "image": "https://i.ibb.co/CsDT4QV1/jabra-elite-8-active-navy-3-22057.webp",
-    "category": "earbuds"
-  },
-  {
-    "name": "Beats Fit Pro",
-    "brand": "Beats",
-    "price": 199,
-    "features": ["Secure Fit Wing Tips", "ANC", "Spatial Audio"],
-    "rating": 4.6,
-    "image": "https://i.ibb.co/27kmjXtS/N211285-3.jpg",
-    "category": "earbuds"
-  },
-  {
-    "name": "Google Pixel Buds Pro",
-    "brand": "Google",
-    "price": 199,
-    "features": ["Custom 6-core Audio Chip", "ANC", "Multipoint Connectivity"],
-    "rating": 4.4,
-    "image": "https://i.ibb.co/3mRv7YqX/6d708e54-c636-4689-bcba-1fe156fff6a2.jpg",
-    "category": "earbuds"
-  },
-  {
-    "name": "Sennheiser Momentum True Wireless 3",
-    "brand": "Sennheiser",
-    "price": 279,
-    "features": ["Audiophile Sound", "Adaptive ANC", "Qi Wireless Charging"],
-    "rating": 4.7,
-    "image": "https://i.ibb.co/ts7dV4T/sennheiser-momentum3.png",
-    "category": "earbuds"
-  },
-  {
-    "name": "Anker Soundcore Liberty 4",
+    "name": "Anker 313 Wireless Charger",
     "brand": "Anker",
-    "price": 129,
-    "features": ["Spatial Audio", "Heart Rate Monitor", "ANC"],
+    "price": 19,
+    "features": ["10W Wireless Charging", "Case-Friendly", "Non-Slip Pad"],
     "rating": 4.5,
-    "image": "https://i.ibb.co/psWMr2M/soundcore-liberty-4-nc-navy-blue-500x500.webp",
-    "category": "earbuds"
+    "image": "https://i.ibb.co.com/MynKzmf9/A2503016-Anker-313-Wireless-Charger-Pad.webp",
+    "category": "chargers"
   },
   {
-    "name": "OnePlus Buds Pro 2",
-    "brand": "OnePlus",
-    "price": 179,
-    "features": ["Co-Created with Dynaudio", "ANC", "LHDC Audio"],
+    "name": "Samsung 25W Super Fast Charger",
+    "brand": "Samsung",
+    "price": 24,
+    "features": ["USB-C PD", "25W Output", "Compact Design"],
+    "rating": 4.7,
+    "image": "https://i.ibb.co.com/fdVHysZd/ph-feature-powerfully-refined-538615314-1.jpg",
+    "category": "chargers"
+  },
+  {
+    "name": "Apple MagSafe Charger",
+    "brand": "Apple",
+    "price": 39,
+    "features": ["15W Wireless", "Magnetic Alignment", "For iPhone 12+"],
+    "rating": 4.6,
+    "image": "https://i.ibb.co.com/N2tmpTQ4/65258e6764dc3018245b77bc-apple-magsafe-charger-iphone-13-magnetic.jpg",
+    "category": "chargers"
+  },
+  {
+    "name": "Xiaomi Mi 33W Wall Charger",
+    "brand": "Xiaomi",
+    "price": 18,
+    "features": ["33W Fast Charging", "USB-A & Type-C", "Wide Compatibility"],
     "rating": 4.4,
-    "image": "https://i.ibb.co/ksGXwgVJ/One-Plus-Buds-Pro-2-True-Wireless-Earbuds.jpg",
-    "category": "earbuds"
+    "image": "https://i.ibb.co.com/VptC93Zt/ff919cb45c041f66fea3a22bfff3f35a.jpg",
+    "category": "chargers"
   },
   {
-    "name": "Realme Buds Air 5 Pro",
-    "brand": "Realme",
-    "price": 99,
-    "features": ["Dual Drivers", "ANC", "LDAC Codec"],
+    "name": "Spigen Wireless Charger F303W",
+    "brand": "Spigen",
+    "price": 22,
+    "features": ["15W Max Output", "AirBoost Technology", "Type-C Input"],
+    "rating": 4.5,
+    "image": "https://i.ibb.co.com/q3yQpCTW/6-max.jpg",
+    "category": "chargers"
+  },
+  {
+    "name": "Baseus 65W GaN3 Charger",
+    "brand": "Baseus",
+    "price": 39,
+    "features": ["65W PD", "GaN Fast Charging", "3 Ports (USB-C/USB-A)"],
+    "rating": 4.8,
+    "image": "https://i.ibb.co.com/XfQ35hXs/BASEUS-Ga-N3-Pro-Fast-Charger-2-CU-Three-Ports-65-W-CN-Plug-with-Type-C-Cable-1.jpg",
+    "category": "chargers"
+  },
+  {
+    "name": "Oraimo 18W Fast Charger",
+    "brand": "Oraimo",
+    "price": 14,
+    "features": ["18W QC 3.0", "Overheat Protection", "Compact Design"],
     "rating": 4.3,
-    "image": "https://i.ibb.co/qL8GGs5N/realmebudsair5proteaser35.jpg",
-    "category": "earbuds"
+    "image": "https://i.ibb.co.com/JwZtVTx8/3613ba275596797461fd1a5ab7b7c1b5-jpg-720x720q80.jpg",
+    "category": "chargers"
   },
   {
-    "name": "SoundPEATS Capsule3 Pro",
-    "brand": "SoundPEATS",
-    "price": 79,
-    "features": ["Hi-Res Wireless", "43dB ANC", "Multipoint Bluetooth"],
-    "rating": 4.2,
-    "image": "https://i.ibb.co/zW8Jm7PN/Sound-PEATS-Capsule-3-Pro-Transparent-Special-Edition-2.jpg",
-    "category": "earbuds"
+    "name": "Belkin BoostCharge Wireless Pad 15W",
+    "brand": "Belkin",
+    "price": 29,
+    "features": ["15W Wireless Charging", "Non-Slip Design", "LED Indicator"],
+    "rating": 4.4,
+    "image": "https://i.ibb.co.com/wFZSg5Dg/s-l400.jpg",
+    "category": "chargers"
+  },
+  {
+    "name": "Ugreen Nexode RG CD359",
+    "brand": "Ugreen",
+    "price": 21,
+    "features": ["30W Fast Charge", "Compact Size", "Universal Support"],
+    "rating": 4.6,
+    "image": "https://i.ibb.co.com/VW9tyjfX/ugreen-nexode-rg-cd359-15550-usb-c-30w-gan-11721193016.webp",
+    "category": "chargers"
+  },
+  {
+    "name": "Mophie Wireless Charging Stand",
+    "brand": "Mophie",
+    "price": 59,
+    "features": ["15W Fast Wireless", "Adjustable Angle", "MagSafe Compatible"],
+    "rating": 4.7,
+    "image": "https://i.ibb.co.com/pvh0FKZV/777706-Product-0-I-638605942204052923-1024x1024.webp",
+    "category": "chargers"
+  },
+  {
+    "name": "Realme Dart Charger 65W",
+    "brand": "Realme",
+    "price": 34,
+    "features": ["65W Dart Charge", "Type-C Output", "Multi-Protection"],
+    "rating": 4.5,
+    "image": "https://i.ibb.co.com/qFsXDGxs/843762ae999dcfb5720d4ce37adacbeb.jpg",
+    "category": "chargers"
+  },
+  {
+    "name": "JOYROOM Magnetic Wireless Charger",
+    "brand": "JOYROOM",
+    "price": 27,
+    "features": ["15W Wireless", "Magnetic Mount", "LED Indicator"],
+    "rating": 4.4,
+    "image": "https://i.ibb.co.com/9kVVNRwf/Joyroom-20-W-Magnetic-Wireless-Power-Bank.jpg",
+    "category": "chargers"
   }
 ]

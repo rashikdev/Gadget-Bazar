@@ -42,7 +42,7 @@ const CategorySection = () => {
     },
     {
       id: 6,
-      name: "Wireless Chargers",
+      name: " Chargers & Adapters",
       image: wirelesscharger,
       link: "/products/category/chargers",
     },
