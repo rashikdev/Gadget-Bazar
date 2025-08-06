@@ -25,7 +25,7 @@ const ProductDetailsPage = async ({ params }) => {
 
   return (
     <div className="md:w-10/12 w-11/12 mx-auto mt-10 min-h-[calc(100vh-300px)]">
-      <h2 className="text-3xl font-bold">Product ID: {id}</h2>
+      <h2 className="text-3xl font-bold">Product ID: {id.slice(0, 8)}</h2>
       <div className="md:h-[500px] h-auto flex md:flex-row flex-col justify-between gap-10">
         <div className="flex-1 flex justify-center items-center">
           <div className="w-[400px] h-[400px]">

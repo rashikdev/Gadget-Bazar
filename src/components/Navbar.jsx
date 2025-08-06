@@ -5,10 +5,11 @@ import Logo from "./Logo";
 import { usePathname } from "next/navigation";
 import useAuth from "@/hooks/useAuth";
 import Menu from "./Menu";
+import { signOut } from "next-auth/react";
 
 const Navbar = () => {
   const { user } = useAuth();
-
+  console.log(user)
   const pathname = usePathname();
   const links = [
     { id: 1, title: "Headphones", link: "/category/headphones" },
@@ -24,6 +25,10 @@ const Navbar = () => {
     { id: 2, title: "Contact", link: "/contact" },
     { id: 3, title: "FAQ", link: "/faq" },
   ];
+
+  const handleLogout = () => {
+    signOut({ callbackUrl: "/login" });
+  };
 
   return (
     <div className="py-4 font-semibold sticky top-0 bg-white text-black z-50">
@@ -88,15 +93,18 @@ const Navbar = () => {
           <Logo></Logo>
         </li>
         {user ? (
-          <li
-            className={`${
-              pathname.includes("/my-cart")
-                ? "text-red-600 font-semibold underline underline-offset-4 transition"
-                : "hover:text-red-600 transition"
-            }`}
-          >
-            <Link href="/my-cart">MY CART</Link>
-          </li>
+          <div className="flex items-center gap-5">
+            <li
+              className={`${
+                pathname.includes("/my-cart")
+                  ? "text-red-600 font-semibold underline underline-offset-4 transition"
+                  : "hover:text-red-600 transition"
+              }`}
+            >
+              <Link href="/my-cart">MY CART</Link>
+            </li>
+            <button onClick={handleLogout} className="cursor-pointer hover:text-red-600">LOGOUT</button>
+          </div>
         ) : (
           <li
             className={`${
