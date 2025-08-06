@@ -6,8 +6,10 @@ import { useRouter } from "next/navigation";
 import { AddProductInLocal } from "@/lib/utils";
 import toast from "react-hot-toast";
 import { motion } from "motion/react";
+import useAuth from "@/hooks/useAuth";
 const QuantitySection = ({ product }) => {
   const router = useRouter();
+  const { user } = useAuth();
   const [quantity, setQuantity] = useState(1);
   const [price, setPrice] = useState(product?.price || 0);
   console.log(product);
@@ -33,6 +35,11 @@ const QuantitySection = ({ product }) => {
   };
 
   const handleAddToCart = () => {
+    if (!user) {
+      toast.error("You need to login first");
+      router.push("/login");
+      return;
+    }
     const cartItem = {
       id: product._id,
       name: product.name,

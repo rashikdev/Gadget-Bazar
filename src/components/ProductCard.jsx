@@ -3,6 +3,7 @@ import useAuth from "@/hooks/useAuth";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
+import toast from "react-hot-toast";
 
 const ProductCard = ({ product }) => {
   const router = useRouter();
@@ -12,7 +13,13 @@ const ProductCard = ({ product }) => {
 
   const handleNavigate = () => {
     if (!user) {
-      return alert("You need to login first");
+      toast.loading("Redirecting to login page...");
+      toast.error("You need to login first");
+      setTimeout(() => {
+        toast.dismiss();
+        router.push("/login");
+      }, 2000);
+      return;
     }
     router.push(`/products/${product._id}`);
   };
