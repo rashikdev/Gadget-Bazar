@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
 import toast from "react-hot-toast";
-
+import { motion } from "motion/react";
 const ProductCard = ({ product }) => {
   const router = useRouter();
   const { image, name, price } = product;
@@ -25,7 +25,11 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div onClick={handleNavigate}>
+    <motion.div
+    initial={{ opacity: 0, scale: 0.5 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.7, type: "tween" }}
+    onClick={handleNavigate}>
       <div className="h-[450px] bg-zinc-800 text-white flex flex-col justify-between overflow-hidden group cursor-pointer rounded-2xl">
         <div className="h-[120vh] overflow-hidden">
           <Image
@@ -44,7 +48,7 @@ const ProductCard = ({ product }) => {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

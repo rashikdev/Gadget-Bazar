@@ -1,18 +1,13 @@
-import { Inter, Poppins } from "next/font/google";
+import { EB_Garamond } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
 import NextAuthProvider from "@/Providers/NextAuthProvider";
 
-const poppins = Poppins({
+const ebGaramond = EB_Garamond({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata = {
@@ -24,7 +19,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={ebGaramond.className}>
         <NextAuthProvider>
           <Navbar />
           {children}

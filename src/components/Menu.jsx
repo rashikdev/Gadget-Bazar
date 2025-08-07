@@ -2,6 +2,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { motion } from "motion/react";
+import useAuth from "@/hooks/useAuth";
+import { signOut } from "next-auth/react";
+import toast from "react-hot-toast";
 
 const links = [
   { id: 1, title: "Headphones", link: "/category/headphones" },
@@ -14,17 +18,24 @@ const links = [
 ];
 
 const Menu = () => {
+  const { user } = useAuth();
   const [open, setOpen] = useState(false);
 
   const handleToggle = () => setOpen(!open);
   const handleClose = () => setOpen(false);
+
+  const hangleLogout = () => {
+    signOut();
+    handleClose();
+    toast.success("Logged out successfully!");
+  };
 
   return (
     <div className="relative">
       {/* Toggle Button */}
       <button
         onClick={handleToggle}
-        className="text-gray-700 z-50 p-2 focus:outline-none"
+        className="text-red-500 z-50 p-2 focus:outline-none"
         aria-label={open ? "Close menu" : "Open menu"}
       >
         {open ? <FaTimes size={22} /> : <FaBars size={22} />}
@@ -32,7 +43,12 @@ const Menu = () => {
 
       {/* Dropdown Menu */}
       {open && (
-        <div className="absolute top-14 right-0 w-64 bg-white shadow-lg rounded-lg z-40">
+        <motion.div
+          initial={{ opacity: 0, x: 90 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="absolute top-14 right-0 w-64 bg-white shadow-lg rounded-lg z-40"
+        >
           <ul className="flex flex-col p-4 space-y-2">
             {/* Home Link */}
             <li>
@@ -63,7 +79,7 @@ const Menu = () => {
               >
                 All Products
               </Link>
-              <ul className="ml-4 mt-2 border-l pl-4 space-y-1">
+              <ul className="ml-4 mt-2 border-l border-red-500 pl-4 space-y-1">
                 {links.map((item) => (
                   <li key={item.id}>
                     <Link
@@ -77,8 +93,26 @@ const Menu = () => {
                 ))}
               </ul>
             </li>
+            {user ? (
+              <motion.li whileTap={{ scale: 0.9 }} className="mt-2 px-4">
+                <button
+                  onClick={hangleLogout}
+                  className="w-full px-2 py-[3px] text-white text-center bg-red-500"
+                >
+                  Logout
+                </button>
+              </motion.li>
+            ) : (
+              <motion.li whileTap={{ scale: 0.9 }} className="mt-2 px-4">
+                <Link href="/login" onClick={handleClose}>
+                  <button className="w-full px-2 py-[3px] text-white text-center bg-black">
+                    Login
+                  </button>
+                </Link>
+              </motion.li>
+            )}
           </ul>
-        </div>
+        </motion.div>
       )}
     </div>
   );

@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import useAuth from "@/hooks/useAuth";
 import Menu from "./Menu";
 import { signOut } from "next-auth/react";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const { user } = useAuth();
@@ -28,6 +29,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     signOut({ callbackUrl: "/login" });
+    toast.success("Logged out successfully!");
   };
 
   return (
