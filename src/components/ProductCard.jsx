@@ -37,7 +37,7 @@ const ProductCard = ({ product }) => {
           />
         </div>
         <div className="h-full flex flex-col justify-end p-4 gap-4 translate-y-13 group-hover:translate-y-0 duration-500">
-          <h3 className="text-xl">{name}</h3>
+          <h3 className="text-[1.2rem]">{name}</h3>
           <p>Price ${price}</p>
           <button className="bg-black text-white py-1 px-6 w-fit uppercase">
             {user ? "click for details" : "Sign In to Buy"}

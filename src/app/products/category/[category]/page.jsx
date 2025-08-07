@@ -2,6 +2,7 @@ import React from "react";
 import CategoryBanner from "@/components/CategoryBanner";
 import ProductCard from "@/components/ProductCard";
 import axiosInstance from "@/lib/axiosInstance";
+import { getProductsByCategory } from "@/lib/products";
 
 export const generateMetadata = async ({ params }) => {
   const category = (await params).category;
@@ -15,11 +16,10 @@ const CategoryPage = async ({ params }) => {
   const category = (await params).category;
   console.log(category);
 
-  const res = await axiosInstance.get(`/products?category=${category}`);
-  const products = res.data;
+  const products = await getProductsByCategory(category);
 
   return (
-    <section className="min-h-[calc(100vh-2px] bg-zinc-950 text-white">
+    <section className="min-h-[calc(100vh-2px)] bg-zinc-950 text-white">
       <div className="">
         <CategoryBanner category={category} />
       </div>
