@@ -1,25 +1,12 @@
+import { getAllProducts } from "@/lib/products";
 import { NextResponse } from "next/server";
-import clientPromise from "@/lib/mongodb";
 
-export async function GET(request) {
+export async function GET() {
   try {
-    const client = await clientPromise;
-    const db = client.db("gadget-bazar");
-
-    // ✅ Get query params
-    const { searchParams } = new URL(request.url);
-    const category = searchParams.get("category");
-
-    let query = {};
-    if (category) {
-      query.category = category;
-    }
-
-    // ✅ Fetch products with or without filter
-    const products = await db.collection("products").find(query).toArray();
-
+    const products = await getAllProducts();
     return NextResponse.json(products);
   } catch (err) {
+    console.error("GET /api/products error:", err);
     return NextResponse.json(
       { error: "Failed to fetch products" },
       { status: 500 }

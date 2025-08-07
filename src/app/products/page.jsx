@@ -1,5 +1,6 @@
 import ProductCard from "@/components/ProductCard";
 import axiosInstance from "@/lib/axiosInstance";
+import { getAllProducts } from "@/lib/products";
 import React from "react";
 
 export const metadata = {
@@ -8,8 +9,7 @@ export const metadata = {
 };
 
 const page = async () => {
-  const res = await axiosInstance.get(`/products`);
-  const products = res.data;
+  const products = await getAllProducts();
   console.log(products);
   const headphones = products.filter(
     (product) => product.category === "headphones"
