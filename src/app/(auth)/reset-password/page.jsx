@@ -8,11 +8,13 @@ const page = () => {
       <div className="w-full max-w-sm md:max-w-md bg-[#111] text-white rounded-2xl p-8 border border-zinc-800 shadow-xl ring-1 ring-purple-500/40">
         <div className="flex flex-col items-center mb-8">
           <h2 className="text-xl font-bold">Reset Password</h2>
-          <p className="text-gray-400 text-sm">Enter your email to get a reset link</p>
+          <p className="text-gray-400 text-sm">
+            Enter your email to get a reset link
+          </p>
         </div>
 
         {/* Form */}
-        <form className="space-y-4">
+        <form className="space-y-8">
           <div>
             <label className="text-sm block mb-1">Email</label>
             <input
@@ -23,13 +25,14 @@ const page = () => {
           </div>
           <button
             type="submit"
-            className="w-full flex items-center justify-center gap-2 py-2 mt-2 bg-white text-black font-semibold rounded-full hover:opacity-90 transition"
+            className="w-full flex items-center justify-center gap-2 py-2 mt-2 bg-white text-black font-semibold rounded-full hover:opacity-90 transition cursor-pointer"
           >
             <FaEnvelope />
             Send Reset Link
           </button>
         </form>
-        <Link href="/login"
+        <Link
+          href="/login"
           type="submit"
           className="w-full flex items-center justify-center gap-2 py-2 mt-8 bg-zinc-950 text-white font-semibold rounded-full hover:opacity-90 transition"
         >

@@ -28,7 +28,7 @@ const Navbar = () => {
   ];
 
   const handleLogout = () => {
-    signOut({ callbackUrl: "/login" });
+    signOut();
     toast.success("Logged out successfully!");
   };
 
