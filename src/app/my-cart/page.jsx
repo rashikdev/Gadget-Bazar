@@ -61,13 +61,15 @@ const MyCartPage = () => {
                   className="flex flex-col md:flex-row justify-between gap-4 p-4 rounded-md shadow-md"
                 >
                   <div className="flex justify-center md:flex-1">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      width={200}
-                      height={200}
-                      className="object-contain max-h-[200px]"
-                    />
+                    <Link href={`/products/${item.id}`}>
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        width={200}
+                        height={200}
+                        className="object-contain max-h-[200px]"
+                      />
+                    </Link>
                   </div>
 
                   <div className="flex-1 space-y-3">

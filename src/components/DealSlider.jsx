@@ -50,7 +50,7 @@ const DealsSlider = ({ deals }) => (
           </div>
           <Link
             href={deal.link}
-            className="inline-block mt-2 text-sm text-white bg-green-600 px-3 py-1 rounded hover:bg-green-700"
+            className="inline-block mt-2 text-sm text-white bg-black px-4 py-2 hover:bg-zinc-800 transition duration-300 ease-in-out"
           >
             Shop Now
           </Link>
