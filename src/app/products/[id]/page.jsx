@@ -48,8 +48,8 @@ export default async function ProductDetailsPage({ params }) {
 
           {/* Product Details */}
           <div className="flex justify-center items-center flex-1">
-            <div className="md:w-[70%] w-full py-5 px-4 flex flex-col justify-between font-bold">
-              <h2 className="text-[2rem] font-bold mb-4">{name}</h2>
+            <div className="md:w-[70%] w-full py-5 px-4 flex flex-col justify-between font-bold space-y-4">
+              <h2 className="text-[2rem] font-bold">{name}</h2>
               <ul className="list-disc list-inside">
                 {(features || []).map((feature) => (
                   <li key={feature}>{feature}</li>

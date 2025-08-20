@@ -12,15 +12,15 @@ const ProductCard = ({ product }) => {
   const { user } = useAuth();
 
   const handleNavigate = () => {
-    if (!user) {
-      toast.loading("Redirecting to login page...");
-      toast.error("You need to login first");
-      setTimeout(() => {
-        toast.dismiss();
-        router.push("/login");
-      }, 2000);
-      return;
-    }
+    // if (!user) {
+    //   toast.loading("Redirecting to login page...");
+    //   toast.error("You need to login first");
+    //   setTimeout(() => {
+    //     toast.dismiss();
+    //     router.push("/login");
+    //   }, 2000);
+    //   return;
+    // }
     router.push(`/products/${product._id}`);
   };
 
@@ -44,7 +44,7 @@ const ProductCard = ({ product }) => {
           <h3 className="text-[1.2rem]">{name}</h3>
           <p>Price ${price}</p>
           <button className="bg-black text-white py-1 px-6 w-fit uppercase">
-            {user ? "click for details" : "Sign In to Buy"}
+            click for details
           </button>
         </div>
       </div>
