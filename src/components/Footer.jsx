@@ -1,8 +1,14 @@
+"use client";
 import { FaFacebookF, FaTwitter, FaInstagram, FaGithub } from "react-icons/fa";
 import Logo from "./Logo";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+  const pathname = usePathname();
+
+  if (pathname.startsWith("/dashboard")) return null;
+  
   return (
     <footer className="bg-zinc-950 text-gray-300 py-12 px-4 md:px-0">
       <div className="w-11/12 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">

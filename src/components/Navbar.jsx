@@ -55,6 +55,9 @@ const Navbar = () => {
     toast.success("Logged out successfully!");
   };
 
+
+  if (pathname.startsWith("/dashboard")) return null;
+
   return (
     <div className="py-4 font-semibold sticky top-0 bg-white text-black z-50">
       <ul className="justify-between items-center w-11/12 mx-auto relative hidden md:flex">

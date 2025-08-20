@@ -11,5 +11,5 @@ export const middleware = async (req) => {
 };
 
 export const config = {
-  matcher: ["/my-cart", "/my-cart/:path*"],
+  matcher: ["/my-cart", "/my-cart/:path*", "/dashboard", "/dashboard/:path*"],
 };

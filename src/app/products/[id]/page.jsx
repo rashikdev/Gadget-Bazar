@@ -5,7 +5,7 @@ import { FaStar } from "react-icons/fa";
 import { notFound } from "next/navigation";
 
 export const generateMetadata = async ({ params }) => {
-  const { id } = params;
+  const { id } = await params;
   try {
     const res = await axiosInstance.get(`/products/${id}`);
     const product = res.data;
@@ -22,7 +22,7 @@ export const generateMetadata = async ({ params }) => {
 };
 
 export default async function ProductDetailsPage({ params }) {
-  const { id } = params;
+  const { id } = await params;
 
   try {
     const res = await axiosInstance.get(`/products/${id}`);

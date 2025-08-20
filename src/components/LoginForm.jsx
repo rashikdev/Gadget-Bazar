@@ -28,7 +28,7 @@ const LoginForm = () => {
       toast.success("Logged in successfully!");
       toast.dismiss();
       form.reset();
-      router.push("/");
+      router.push("/products");
     }
   };
 
