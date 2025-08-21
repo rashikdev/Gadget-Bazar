@@ -1,4 +1,5 @@
 "use client";
+import axiosInstance from "@/lib/axiosInstance";
 import { getImgUrl } from "@/lib/utils";
 import React, { createRef, useState } from "react";
 import toast from "react-hot-toast";
@@ -51,7 +52,7 @@ const AddProduct = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (isUploading) {
@@ -74,8 +75,23 @@ const AddProduct = () => {
     const data = Object.fromEntries(formData);
     data.features = features;
     data.image = image;
-    console.log(data);
-    // Handle form submission here
+    // console.log(data);
+
+    // add product in database
+    // try {
+    //   const res = await axiosInstance.post("/products", data);
+
+    //   const result = await res.json();
+    //   if (result.success) {
+    //     toast.success("Product added successfully!");
+    //     console.log(result);
+    //   } else {
+    //     toast.error(result.message);
+    //   }
+    // } catch (err) {
+    //   toast.error("Something went wrong!");
+    //   console.error(err);
+    // }
   };
 
   return (
@@ -148,7 +164,7 @@ const AddProduct = () => {
               <option value="headphones">Headphone</option>
               <option value="smartwatches">Smart Watch</option>
               <option value="earbuds">Earbud</option>
-              <option value="powerbank">Power Bank</option>
+              <option value="powerbanks">Power Bank</option>
               <option value="cameras">Camera</option>
               <option value="chargers">Charger</option>
             </select>
