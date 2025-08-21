@@ -1,13 +1,15 @@
 "use client";
 import useAuth from "@/hooks/useAuth";
-import React from "react";
+import React, { useState } from "react";
 import {
   FaTachometerAlt,
   FaPlusCircle,
   FaBoxOpen,
   FaShoppingCart,
   FaCog,
+  FaListAlt,
 } from "react-icons/fa";
+import { MdKeyboardArrowDown } from "react-icons/md";
 import adminLogo from "@/assets/adminLogo.webp";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,6 +18,7 @@ import { usePathname } from "next/navigation";
 const DashboardSideBar = () => {
   const { user } = useAuth();
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
 
   const menuItems = [
     { name: "Dashboard", icon: <FaTachometerAlt />, path: "/dashboard" },
@@ -23,6 +26,11 @@ const DashboardSideBar = () => {
       name: "Add Product",
       icon: <FaPlusCircle />,
       path: "/dashboard/add-product",
+    },
+    {
+      name: "All Products",
+      icon: <FaListAlt />,
+      path: "/products",
     },
     {
       name: "Manage Products",
@@ -47,12 +55,18 @@ const DashboardSideBar = () => {
           <span className="w-4 h-4 bg-green-500 rounded-full border-2 border-white absolute bottom-2 right-[3px]"></span>
         </div>
 
-        <select className="mt-3 font-semibold outline-none bg-transparent text-gray- text-center">
-          <option>{user?.name || "Rashik"}</option>
-          <option>Profile</option>
-          <option>Account</option>
-          <option>Logout</option>
-        </select>
+        <div className="mt-3 text-center flex flex-col justify-center items-center">
+          <h2
+            onClick={() => setOpen(!open)}
+            className=" font-semibold flex items-center"
+          >
+            {user?.name}
+            <span>
+              <MdKeyboardArrowDown size={22} />
+            </span>
+          </h2>
+          <p className="text-sm text-gray-500">{user?.email}</p>
+        </div>
       </div>
 
       {/* admin menu */}

@@ -1,6 +1,7 @@
 "use client";
 import axiosInstance from "@/lib/axiosInstance";
 import { getImgUrl } from "@/lib/utils";
+import axios from "axios";
 import React, { createRef, useState } from "react";
 import toast from "react-hot-toast";
 import { FaTimes, FaCheck, FaSpinner } from "react-icons/fa";
@@ -73,25 +74,32 @@ const AddProduct = () => {
     const form = e.target;
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
+    data.price = Number(data.price);
     data.features = features;
     data.image = image;
-    // console.log(data);
+    console.log(data);
 
     // add product in database
     try {
-      const res = await axiosInstance.post("/products", data);
-      const result = res.data;
-
-      if (result.success) {
+      const res = await axios.post("/api/product", data);
+      if (res.data.insertedId) {
         toast.success("Product added successfully!");
-        console.log(result);
       } else {
-        toast.error(result.message);
+        toast.error("Failed to add product.");
       }
-    } catch (err) {
-      toast.error("Something went wrong!");
-      console.error(err);
+    } catch (error) {
+      toast.error("Unauthorized access.");
+    } finally {
+      form.reset();
+      setFeatureInput("");
+      setFeatures([]);
+      setImage(null);
+      setUploaded(false);
     }
+  };
+
+  const handleSaveForLater = () => {
+    toast.error("This feature is not available yet.");
   };
 
   return (
@@ -246,6 +254,7 @@ const AddProduct = () => {
               Add Product
             </button>
             <button
+              onClick={handleSaveForLater}
               type="button"
               className="bg-purple-500 hover:bg-purple-600 text-white px-6 py-2 rounded-lg shadow-md transition cursor-pointer"
             >
