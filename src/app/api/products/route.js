@@ -1,4 +1,3 @@
-import clientPromise from "@/lib/mongodb";
 import { getAllProducts } from "@/lib/products";
 import { NextResponse } from "next/server";
 

@@ -78,20 +78,20 @@ const AddProduct = () => {
     // console.log(data);
 
     // add product in database
-    // try {
-    //   const res = await axiosInstance.post("/products", data);
+    try {
+      const res = await axiosInstance.post("/products", data);
 
-    //   const result = await res.json();
-    //   if (result.success) {
-    //     toast.success("Product added successfully!");
-    //     console.log(result);
-    //   } else {
-    //     toast.error(result.message);
-    //   }
-    // } catch (err) {
-    //   toast.error("Something went wrong!");
-    //   console.error(err);
-    // }
+      const result = await res.json();
+      if (result.success) {
+        toast.success("Product added successfully!");
+        console.log(result);
+      } else {
+        toast.error(result.message);
+      }
+    } catch (err) {
+      toast.error("Something went wrong!");
+      console.error(err);
+    }
   };
 
   return (
