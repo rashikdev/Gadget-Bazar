@@ -1,13 +1,24 @@
-// src/app/dashboard/page.jsx
-"use client";
+import Chart from "@/components/chart/Chart";
+import States from "@/components/states/States";
+import { GetAllProducts } from "@/lib/GetProduct";
 
-import { useState } from "react";
-import { Toaster, toast } from "react-hot-toast";
+const Dashboard = async () => {
+  const products = await GetAllProducts();
+  // console.log(products);
 
-export default function Dashboard() {
   return (
-    <div>
-      <h2>Dashboard</h2>
+    <div className="p-8 space-y-6">
+      <h2 className="text-2xl font-bold text-gray-800">
+        📊 Dashboard Overview
+      </h2>
+
+      {/* Stats Cards */}
+      <States />
+
+      {/* Chart Section */}
+      <Chart />
     </div>
   );
-}
+};
+
+export default Dashboard;

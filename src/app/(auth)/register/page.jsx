@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaEnvelope } from "react-icons/fa";
 import SocialLoginButtons from "../components/SocialLoginButton";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const RegisterPage = () => {
   const router = useRouter();
@@ -30,19 +31,18 @@ const RegisterPage = () => {
       console.log(data);
 
       if (res.ok && data.insertedId) {
-        alert("✅ User registered successfully!");
+        toast.success("User registered successfully!");
         form.reset();
         router.push("/login");
       } else {
-        alert(`❌ Registration failed: ${data.error || "Unknown error"}`);
+        toast.error(`❌ Registration failed: ${data.error || "Unknown error"}`);
       }
     } catch (error) {
       console.log("Fetch error:", error);
-      alert("❌ Something went wrong.");
+      toast.error("❌ Something went wrong.");
     }
   };
 
-  console.log();
   return (
     <div className="min-h-screen flex items-center justify-center bg-black px-4">
       <div className="w-full max-w-sm md:max-w-md bg-[#111] text-white rounded-2xl p-8 border border-zinc-800 shadow-xl ring-1 ring-purple-500/40">

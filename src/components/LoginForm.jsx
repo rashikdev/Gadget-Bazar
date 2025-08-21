@@ -23,7 +23,8 @@ const LoginForm = () => {
     });
 
     if (res?.error) {
-      toast.error(res.error);
+      toast.dismiss();
+      toast.error("Invalid email or password");
     } else {
       toast.success("Logged in successfully!");
       toast.dismiss();

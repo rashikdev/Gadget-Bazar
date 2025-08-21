@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { use } from "react";
+import React, { use, useEffect, useState } from "react";
 import Logo from "./Logo";
 import { usePathname } from "next/navigation";
 import useAuth from "@/hooks/useAuth";
@@ -8,11 +8,24 @@ import Menu from "./Menu";
 import { signOut } from "next-auth/react";
 import toast from "react-hot-toast";
 import { motion } from "motion/react";
+import { getUser } from "@/lib/utils";
 
 const Navbar = () => {
   const { user } = useAuth();
-  console.log(user);
+  const [role, setRole] = useState(null);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      if (user?.email) {
+        const userInDB = await getUser(user.email);
+        setRole(userInDB?.role);
+      }
+    };
+
+    fetchUser();
+  }, [user]);
+
   const links = [
     { id: 0, title: "All Products", link: "/products" },
     { id: 1, title: "Headphones", link: "/products/category/headphones" },
@@ -55,9 +68,8 @@ const Navbar = () => {
     toast.success("Logged out successfully!");
   };
 
-
   if (pathname.startsWith("/dashboard")) return null;
-
+  console.log(role);
   return (
     <div className="py-4 font-semibold sticky top-0 bg-white text-black z-50">
       <ul className="justify-between items-center w-11/12 mx-auto relative hidden md:flex">
@@ -142,7 +154,11 @@ const Navbar = () => {
                   : "hover:text-red-600 transition"
               }`}
             >
-              <Link href="/my-cart">MY CART</Link>
+              {role === "admin" ? (
+                <Link href="/dashboard">DASHBOARD</Link>
+              ) : (
+                <Link href="/my-cart">MY CART</Link>
+              )}
             </li>
             <button
               onClick={handleLogout}

@@ -53,3 +53,11 @@ export const getImgUrl = async (image) => {
   );
   return data.data.display_url;
 };
+
+export const getUser = async (email) => {
+  if (!email) return null;
+  const { data } = await axios.get(`/api/users?email=${email}`);
+  return data;
+};
+
+
