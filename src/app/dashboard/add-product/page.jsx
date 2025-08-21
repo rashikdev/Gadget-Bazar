@@ -80,8 +80,8 @@ const AddProduct = () => {
     // add product in database
     try {
       const res = await axiosInstance.post("/products", data);
+      const result = res.data;
 
-      const result = await res.json();
       if (result.success) {
         toast.success("Product added successfully!");
         console.log(result);
