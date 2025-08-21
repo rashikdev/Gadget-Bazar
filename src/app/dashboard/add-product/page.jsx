@@ -246,7 +246,7 @@ const AddProduct = () => {
           </div>
 
           {/* Buttons */}
-          <div className="flex gap-4 md:col-span-2 justify-end mt-4">
+          <div className="flex md:flex-row flex-col gap-4 md:col-span-2 justify-end mt-4">
             <button
               type="submit"
               className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg shadow-md transition cursor-pointer"

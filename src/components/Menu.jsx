@@ -17,7 +17,7 @@ const links = [
   { id: 7, title: "Gaming Accessories", link: "/category/gamings" },
 ];
 
-const Menu = () => {
+const Menu = ({ role }) => {
   const { user } = useAuth();
   const [open, setOpen] = useState(false);
 
@@ -61,13 +61,23 @@ const Menu = () => {
               </Link>
             </li>
             <li>
-              <Link
-                href="/my-cart"
-                onClick={handleClose}
-                className="block px-4 py-2 text-gray-800 hover:bg-blue-100 rounded transition"
-              >
-                My Cart
-              </Link>
+              {role === "admin" ? (
+                <Link
+                  href="/dashboard"
+                  onClick={handleClose}
+                  className="block px-4 py-2 text-gray-800 hover:bg-blue-100 rounded transition"
+                >
+                  Dashboard
+                </Link>
+              ) : (
+                <Link
+                  href="/my-cart"
+                  onClick={handleClose}
+                  className="block px-4 py-2 text-gray-800 hover:bg-blue-100 rounded transition"
+                >
+                  My Cart
+                </Link>
+              )}
             </li>
 
             {/* All Products with Categories */}

@@ -9,27 +9,58 @@ import toast from "react-hot-toast";
 const LoginForm = () => {
   const router = useRouter();
 
+  // const handleLogin = async (e) => {
+  //   e.preventDefault();
+  //   toast.loading("Logging in...");
+  //   const form = e.target;
+  //   const email = form.email.value;
+  //   const password = form.password.value;
+
+  //   const res = await signIn("credentials", {
+  //     redirect: false,
+  //     email,
+  //     password,
+  //   });
+
+  //   if (res?.error) {
+  //     toast.dismiss();
+  //     toast.error("Invalid email or password");
+  //   } else {
+  //     toast.success("Logged in successfully!");
+  //     toast.dismiss();
+  //     form.reset();
+  //     router.push("/products");
+  //   }
+  // };
+
   const handleLogin = async (e) => {
     e.preventDefault();
-    toast.loading("Logging in...");
-    const form = e.target;
-    const email = form.email.value;
-    const password = form.password.value;
 
-    const res = await signIn("credentials", {
-      redirect: false,
-      email,
-      password,
-    });
+    try {
+      toast.loading("Logging in...");
+      const form = e.target;
+      const email = form.email.value;
+      const password = form.password.value;
 
-    if (res?.error) {
+      const res = await signIn("credentials", {
+        redirect: false,
+        email,
+        password,
+      });
+
+      if (res?.error) {
+        toast.dismiss();
+        toast.error("Invalid email or password");
+      } else {
+        toast.dismiss();
+        toast.success("Logged in successfully!");
+        form.reset();
+        router.push("/products");
+      }
+    } catch (error) {
       toast.dismiss();
-      toast.error("Invalid email or password");
-    } else {
-      toast.success("Logged in successfully!");
-      toast.dismiss();
-      form.reset();
-      router.push("/products");
+      console.error("Login error:", error);
+      toast.error("Something went wrong. Please try again.");
     }
   };
 

@@ -14,8 +14,10 @@ import adminLogo from "@/assets/adminLogo.webp";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { signOut } from "next-auth/react";
+import toast from "react-hot-toast";
 
-const DashboardSideBar = () => {
+const DashboardSideBar = ({ setIsOpen }) => {
   const { user } = useAuth();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -40,6 +42,15 @@ const DashboardSideBar = () => {
     { name: "Orders", icon: <FaShoppingCart />, path: "/dashboard/orders" },
     { name: "Settings", icon: <FaCog />, path: "/dashboard/settings" },
   ];
+
+  const handleSignOut = () => {
+    signOut();
+    toast.success("Logged out successfully!");
+  };
+
+  const handleClose = () => {
+    if (setIsOpen) setIsOpen(false);
+  };
 
   return (
     <div className="flex flex-col justify-between h-full w-64 bg-white shadow-md">
@@ -70,9 +81,10 @@ const DashboardSideBar = () => {
       </div>
 
       {/* admin menu */}
-      <div className="flex-1 px-6 space-y-6">
+      <div className="flex-1 px-6 md:space-y-6 space-y-2">
         {menuItems.map((item) => (
           <Link
+            onClick={handleClose}
             href={item.path}
             key={item.name}
             className={`flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer transition ${
@@ -87,10 +99,13 @@ const DashboardSideBar = () => {
       </div>
 
       {/* admin logout/help */}
-      <div className="px-6 py-6 text-sm text-gray-500">
-        <p className="font-semibold">Need Help?</p>
-        <p>505-070-1058</p>
-        <p className="text-blue-500">help@emailaddress.com</p>
+      <div className="px-6 py-6 text-gray-500">
+        <button
+          onClick={handleSignOut}
+          className="w-full bg-[crimson] text-white py-2 rounded-md font-semibold cursor-pointer"
+        >
+          Logout
+        </button>
       </div>
     </div>
   );

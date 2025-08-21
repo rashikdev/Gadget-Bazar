@@ -7,7 +7,7 @@ const Dashboard = async () => {
   // console.log(products);
 
   return (
-    <div className="p-8 space-y-6">
+    <div className="md:p-8 px-3 space-y-6">
       <h2 className="text-2xl font-bold text-gray-800">
         📊 Dashboard Overview
       </h2>

@@ -145,7 +145,7 @@ const Navbar = () => {
         <li>
           <Logo></Logo>
         </li>
-        {user ? (
+        {user && role ? (
           <div className="flex items-center gap-5">
             <li
               className={`${
@@ -185,7 +185,7 @@ const Navbar = () => {
             <Logo></Logo>
           </li>
           <li>
-            <Menu></Menu>
+            <Menu role={role}></Menu>
           </li>
         </ul>
       </div>
