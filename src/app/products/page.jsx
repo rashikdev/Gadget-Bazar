@@ -21,6 +21,16 @@ const page = async () => {
     (product) => product.category === "smartwatches"
   );
 
+  const powerbanks = products.filter(
+    (product) => product.category === "powerbanks"
+  );
+
+  const cameras = products.filter((product) => product.category === "cameras");
+
+  const chargers = products.filter(
+    (product) => product.category === "chargers"
+  );
+
   const gridClass = "grid grid-cols-1 lg:grid-cols-4 gap-8";
 
   return (
@@ -45,6 +55,24 @@ const page = async () => {
           <h2 className="text-2xl font-bold pt-10 ">Headphones</h2>
           <div className={gridClass}>
             {headphones.map((product) => (
+              <ProductCard product={product} key={product._id}></ProductCard>
+            ))}
+          </div>
+          <h2 className="text-2xl font-bold pt-10 ">Power Banks</h2>
+          <div className={gridClass}>
+            {powerbanks.map((product) => (
+              <ProductCard product={product} key={product._id}></ProductCard>
+            ))}
+          </div>
+          <h2 className="text-2xl font-bold pt-10 ">Cameras</h2>
+          <div className={gridClass}>
+            {cameras.map((product) => (
+              <ProductCard product={product} key={product._id}></ProductCard>
+            ))}
+          </div>
+          <h2 className="text-2xl font-bold pt-10 ">Chargers</h2>
+          <div className={gridClass}>
+            {chargers.map((product) => (
               <ProductCard product={product} key={product._id}></ProductCard>
             ))}
           </div>

@@ -15,7 +15,10 @@ const CheckoutPage = () => {
     setCart(cartData);
   }, []);
 
-  const totalAmount = cart.reduce((acc, item) => acc + item.price, 0);
+  const totalAmount = cart.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
 
   const handlePayment = () => {
     toast.loading("Processing Payment...");
@@ -66,7 +69,12 @@ const CheckoutPage = () => {
             placeholder="Address"
             className="bg-black/10 outline-green-500 px-4 py-2 rounded md:col-span-2"
           ></textarea>
-          <button type="submit" className="bg-black text-white w-full col-span-2 p-2">Save Billing Info For Next</button>
+          <button
+            type="submit"
+            className="bg-black text-white w-full col-span-2 p-2"
+          >
+            Save Billing Info For Next
+          </button>
         </form>
       </div>
 
